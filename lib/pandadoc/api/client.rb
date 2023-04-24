@@ -22,8 +22,14 @@ module Pandadoc
       private
 
       def default_headers(token)
+        auth_string = if token.match(/^API-Key/)
+          token
+        else
+          "Bearer #{token}"
+        end
+        
         {
-          'Authorization' => "Bearer #{token}"
+          'Authorization' => auth_string
         }
       end
 
