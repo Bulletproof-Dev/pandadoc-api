@@ -5,7 +5,9 @@ module Pandadoc
     class Client
       def get(path, token, params = {})
         uri = build_uri(path)
-        HTTParty.get(uri, headers: default_headers(token), query: params)
+        response = HTTParty.get(uri, headers: default_headers(token), query: params)
+        puts "\n\n#{__FILE__}:#{__LINE__} - #{response.request.last_uri}\n\n"
+        response
       end
 
       def post_json(path, token, params = {})
