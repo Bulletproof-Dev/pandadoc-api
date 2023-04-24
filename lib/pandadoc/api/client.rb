@@ -23,8 +23,8 @@ module Pandadoc
 
       def default_headers(token)
         puts "\n\n#{__FILE__}:#{__LINE__} - #{token}\n\n"
-        puts "\n\n#{__FILE__}:#{__LINE__} - #{token.match(/^API-KEY/)}\n\n"
-        auth_string = if token.match(/^API-KEY/)
+        puts "\n\n#{__FILE__}:#{__LINE__} - #{token.match(/^API-Key/)}\n\n"
+        auth_string = if token.match(/^API-Key/)
           token
         else
           "Bearer #{token}"
