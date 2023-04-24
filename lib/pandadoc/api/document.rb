@@ -21,7 +21,7 @@ module Pandadoc
           status: { required: false, type: Integer },
           count: { required: false, type: Integer },
           page: { required: false, type: Integer },
-          metadata: { required: false, type: Hash }
+          metadata: { required: false, type: String }
         }
 
         client.get '/documents', token, validated_params(params, validations)
